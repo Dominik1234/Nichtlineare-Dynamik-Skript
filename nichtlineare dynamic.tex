@@ -351,40 +351,166 @@ Daher klassifiziert man lineare Differentialgleichungen modulo einer linearen Tr
 			\[ \begin{cases} \dot{\xi_1} = \lambda_1 \xi_1 \\
 				\dot{\xi_2} = \lambda_2 \xi_2 \end {cases} 
 			\]
-			\begin{itemize}
+			\begin{enumerate}
 				\item \(0<\lambda_1 < \lambda_2\) 
-				\begin{align*}
-					\Rightarrow \xi_1(t)   = \xi_{10} e^{\lambda_1 t} \\
-					\xi_2(t)   = \xi_{20} e^{\lambda_2 t} 
-				\end{align*}
-				\(\xi_{10}, \xi_{20} \in \RR \) beliebig \\
-				\underline{Elimination von t:}\\
-				\((\xi_{10} \not= 0)\) 
-				\begin{align*}
-&\frac{\xi_1}{\xi_{10}} = e^{\lambda_1t} \\
-\Leftrightarrow &\ln{\left(\frac{\xi_1}{\xi_{10}}\right)} = \lambda_1 t 		
-\Leftrightarrow t = 	
-\frac {1}{\lambda_1} \ln \left(\frac{\xi_1}{\xi_{10}} \right) \\
-					\Rightarrow \xi_2 &  = \xi_{20} \exp\left( \frac{\lambda_2}{\lambda_1} \ln\left(\frac{\xi_1}{\xi_{10}} \right) \right) = \xi_{20} \left(\frac{\xi_1}{\xi_{10}}\right)^{\frac{\lambda_2}{\lambda_1}}  					
+					\begin{align*}
+						\Rightarrow \xi_1(t)   = \xi_{10} e^{\lambda_1 t} \\
+						\xi_2(t)   = \xi_{20} e^{\lambda_2 t} 
+					\end{align*}
+					\(\xi_{10}, \xi_{20} \in \RR \) beliebig \\
+					\underline{Elimination von t:}\\
+					\((\xi_{10} \not= 0)\) 
+					\begin{align*}
+						&\frac{\xi_1}{\xi_{10}} = e^{\lambda_1t} \\
+						\Leftrightarrow &\ln{\left(\frac{\xi_1}{\xi_{10}}\right)} = \lambda_1 t 		
+						\Leftrightarrow t = 	
+						\frac {1}{\lambda_1} \ln \left(\frac{\xi_1}{\xi_{10}} \right) \\
+						\Rightarrow \xi_2 &  = \xi_{20} \exp\left( \frac{\lambda_2}{\lambda_1} \ln\left(	\frac{\xi_1}{\xi_{10}} \right) \right) = \xi_{20} \left(\frac{\xi_1}{\xi_{10}}\right)^{\frac{\lambda_2}{\lambda_1}}  					
 				\end{align*}
 				\( x = 0 \) ist instabiler Knoten 2. Art
 			
-			\item \(\lambda_2 < \lambda_1 < 0\) \\
-				\( x = 0\) ist stabiler Knoten 2. Art
-			\item \( 0 < \lambda_1 = \lambda_2\) \\	
-				\( x= 0\) ist instabiler Knoten 1. Art
-			\item \( \lambda_1 = \lambda_2 < 0 \) \\
-				\( x = 0\) ist stabiler Knoten 1. Art
-			\item \(\lambda_1 < 0 < \lambda_2\) \\
-				\(x = 0\) ist Sattelpunkt
-					
-\begin{figure}[htpb]
-\centering
-\includegraphics[width=0.45\textwidth]{img/lin_sys/lin_sys_1.pdf}
-\includegraphics[width=0.45\textwidth]{img/lin_sys/lin_sys_2.pdf}
-\caption{$\lambda_1, \lambda_2 > 0$ (links); $\lambda_2, \lambda 1 < 0$ (rechts) }
-\end{figure}
-		\end{itemize}
+				\item \(\lambda_2 < \lambda_1 < 0\) \\
+					\( x = 0\) ist stabiler Knoten 2. Art
+					\begin{figure}[htpb]
+						\centering
+						\includegraphics[width=0.45\textwidth]{img/lin_sys/lin_sys_1.pdf}
+						\includegraphics[width=0.45\textwidth]{img/lin_sys/lin_sys_2.pdf}
+						\caption{$\lambda_1, \lambda_2 > 0$ (links); $\lambda_2, \lambda_1 < 0$ (rechts) }
+					\end{figure}
+				
+				\item \( 0 < \lambda_1 = \lambda_2\) \\	
+					\( x= 0\) ist instabiler Knoten 1. Art
+				\item \( \lambda_1 = \lambda_2 < 0 \) \\
+					\( x = 0\) ist stabiler Knoten 1. Art
+				\item \(\lambda_1 < 0 < \lambda_2\) \\
+					\(x = 0\) ist Sattelpunkt (instabil)
+			\end{enumerate}
+			\item \(A\) habe einen geometrisch einfachen und algebraisch doppelten EW \({\lambda \in \RR}\)
+				\( \Rightarrow J = \left( \begin{array}{cc} \lambda & 1 \\ 0 & \lambda \end{array} \right) \)
+				\[\begin{cases} \dot{\xi_1} = \lambda \xi_1 + \xi_2 \\ \dot{\xi_2} = \lambda \xi_2 \qquad \Rightarrow \xi_2(t) = \xi_{20} e ^{\lambda t}
+				\end{cases} \]
+				\begin{align*}
+					&\Rightarrow \xi_1(t) = \xi_{10} e ^{\lambda t} + t \xi_{20} e ^{\lambda t} \\
+					&\Rightarrow t = \frac{1}{\lambda} \ln{\frac{\xi_2}{\xi_{20}}}, \qquad \xi_{20} \not=0 \\
+					&\Rightarrow \xi_1 = \left( \frac{\xi_{10}}{\xi_{20}} + \frac{1}{\lambda} \ln{\frac{\xi_2}{\xi_{20}}}\right) \xi_2
+				\end{align*}
+				
+				\begin{enumerate}
+					\item \(\lambda < 0: x = 0 \) ist stabiler Knoten 3. Art
+					\item \(\lambda < 0: x = 0 \) ist instabiler Knoten 3. Art 
+				\end{enumerate}
+			\item \(A\) habe ein paar kimplex konjugierte EW \(\lambda_{1/2} = \alpha \pm i \beta \) \\
+				\(\Rightarrow J = \left( \begin{array}{cc} \alpha & \beta \\ - \beta & \alpha \end{array}\right) \) ist reelle Jordannormalform von \(A\)
+					\[\begin{cases} \dot{\xi_1} =  \alpha \xi_1 + \beta\xi_2 \\ \dot{\xi_2} = -\beta \xi_1 + \alpha \xi_2 
+				\end{cases} \]
+				\[\Rightarrow\phi(t,\xi_0) = e^{Jt} \xi_0 = e^{(A+B)t} \xi_0 \]
+				mit \(A = \left( \begin{array}{cc} \alpha & 0 \\ 0 & \alpha \end{array}\right) \), \( B = \left( \begin{array}{cc} 0 & \beta \\ - \beta & 0 \end{array}\right) \Rightarrow AB = BA\)
+				\[ e^{(A+B)t} \xi_0 = e^{At} e^{Bt} \xi_0 \]
+				wobei \( e^{At} = e^{\alpha t} \cdot I_2\), \(e^{Bt} = \left(\begin{array}{cc} \cos{(\beta t)}  & \sin{(\beta t)} \\ - \sin{(\beta t )} & \cos{(\beta t })  \end{array}\right) \)
+				\[\Rightarrow e^{Jt} = e^{\alpha t} \underbrace{\left(\begin{array}{cc} \cos{(\beta t)}  & \sin{(\beta t)} \\ - \sin{(\beta t )} & \cos{(\beta t })  \end{array}\right)}_{Drehmatrix}
+				\]
+				\begin{enumerate}
+					\item \(\alpha, \beta < 0 \Rightarrow x = 0\) ist stabiler Strudel/Wirbel, gegen den Uhrzeigersinn orientiert
+					\item \(\alpha < 0, \beta > 0 \Rightarrow x = 0\) ist stabiler Strudel/Wirbel, mit dem Uhrzeigersinn orientiert
+					\item Analog: falls \(\alpha > 0\) ist \(x = 0\) ein instabiler Strudel/Wirbel
+					\item \(\alpha = 0 \Rightarrow x = 0\) heißt Zentrum (stabil, nicht asympt. stabil)
+				\end{enumerate}
+
+		
 	\end{itemize}
+	
+	Bilder?!
+\begin{definition}
+	Sei \((X,\phi)\) ein dynamsches System. Dann heißt
+	\begin{itemize}
+		\item \( M \subset X \) positiv invariant \(\Leftrightarrow \phi(t,M) \subset M\ \forall t \geq 0\)
+		\item \(\begin{aligned}[t] M \subset X  \text{negativ invariant} &\Leftrightarrow M \subset \phi(t,M) \forall t \geq 0 \\
+			& \Leftrightarrow \phi(-t,M) \subset M\ \forall t \geq 0 \\
+			& \Leftrightarrow \phi(t,M) \subset M \ \forall t \leq 0 
+			\end{aligned} \)
+			
+		\item \(\begin{aligned}[t] M \subset X \text{invariant} & \Leftrightarrow M\ \text{positiv und negativ invariant}\\
+			& \Leftrightarrow \phi(t,M) = M \ \forall t \in \RR (\mathbb{Z}) 
+			\end{aligned} \)
+			
+		\item \( M \subset X \) invariant \\
+			\(\Rightarrow (M,\phi(t,\cdot)_M) \) ist ein dynamisches System auf M, ein Teilsystem des ursprünglichen Systems \((X,\phi)\) \(\rightarrow \) Reduktion von \((X,\phi)\) auf \(M\) 
+	\end{itemize}
+	
+\end{definition}
+
+\begin{bemerkung}
+	Jeder invariante Untervektorraum \(U \subset \RR^n \) bzgl. der linearen Abbildung 
+		\[x \mapsto Ax : \RR^n \rightarrow \RR^n \]
+	\((Ax \in U \text{, falls} x \in U )\) ist ein invarianter Untervektorraum des GDG-Systems \(\dot{x} = AX\), denn
+		\[\phi(t,x_0) = e^{At} x_0 = \sum_{j=0}^{\infty} \frac{t^j}{j!} \underbrace{A^j x_0}_{\in U}, \qquad x_0 \in U\]
+Der Wert der Summe liegt in \(U\), da sie Grenzwert ist von
+	\[ e^{At} x_0 = \lim_{N\to \infty} \underbrace{\sum_{j=0}^{N} \frac{t^j}{j!} A^j x_0 }_{\in U\ \forall N \text{, da U abgeschlossen}} \]
+		
+\end{bemerkung}
+
+\begin{corollar}
+	Alle Eigenräume \(E_j\) (bw. verallgemeinerte Eigenräume), sowie deren direkte Summen sind kanonisch invariante UVRe des Systems
+		\[\dot{x} = Ax, \qquad A \in \RR^{n\times n} \]
+	\underline{Speziell:} Ist \(\RR^n = \oplus_{j=1}^{N} E_j \) eine direkte Summe von (relativ niedrig dimensionierten) ERn von \(A\), dann ist das ursprüngliche System \(\dot{x}=Ax\) das direkte Produkt der Teilsysteme auf den \(E_j\). \\
+	\(\Rightarrow \) Lassen sich diese Teilsysteme vollständig analysieren bzw. klassifizieren, dann auch das ursprüngliche System \(\dot{x} = Ax\) im \(\RR^n\)
+\end{corollar}
+
+\begin{definition}
+	Spezielle (verallgemeinerte) Eigenräume von \(A\) und damit invariante Untervektorräume von \(\dot{x}=Ax\) : 
+	\begin{itemize} 
+		\item stabiler Unterraum von \(\dot{x}=Ax\)
+			\[E^s := \{\text{verallg. ER zu allen EW} \lambda \text{von} A \text{mit} \Re \lambda < 0 \} \]
+		\item instabiler Unterraum von \(\dot{x}=Ax\)
+			\[E^u := \{\text{verallg. ER zu allen EW} \lambda \text{von} A \text{mit} \Re \lambda > 0 \} \]
+		\item Zentrums-Unterraum von \(\dot{x}=Ax\)
+			\[E^c := \{\text{verallg. ER zu allen EW} \lambda \text{von} A \text{mit} \Re \lambda = 0 \} \]
+	\end{itemize}
+\end{definition}
+
+\begin{satz}
+Es gilt: 
+	\[\RR^n = E^s \oplus E^u \oplus E^c \]
+\end{satz}
+
+\begin{description}
+	\item[Terminologie]
+	\begin{itemize}
+		\item \(E^c = \{0\} \Rightarrow x =0\) ist Sattelpunkt, falls \({E^s \not= \{0\}, E^u \not= \{0\}}\)
+		\item \(E^c = \{0\} \Rightarrow x =0\) heißt hyperbolischer Gleichgewichtspunkt von \(\dot{x} = Ax\)
+		\item \(E^c = \{0\}, E^u = \{0\} \Rightarrow x =0\) heißt Senke (asympt. stabil) 
+		\item \(E^c = \{0\}, E^s = \{0\} \Rightarrow x =0\) heißt Quelle (instabil)
+		
+	\end{itemize}
+\end{description}
+\paragraph {\(n > 2\) wo positionieren??} 
+
+
+\section{Diskreter Fall}
+
+\(X = \RR^n, \psi \) erzeugender Homöomorphismus auf \(\RR^n, x_{k+1} = \psi(x_k)\) \((k \in \mathbb{Z})\)
+
+\subsection{Linearer Fall}
+	\[\psi(x) = Ax\]
+	linear in \(x\), \(A\) regulär \((\to \det A \not= 0) \)
+	
+\paragraph{\(n = 1\) (Klassifikation)}
+	\[ \psi(x) = ax, \qquad a \in \RR^n, a \not= 0 \]
+	\begin{itemize}
+		\item \( a < -1\) orientierungsumkehrende Quelle
+		\item \(-1 < a < 0\) orientierungsumkehrende Senke
+		\item \(0 < a < 1\) orientierungserhaltende Senke
+		\item \( 1 < a\) orientierungserhaltende Quelle
+		\item \( a = 1\) Zentrum (umgeben von auschließlich Gleichgewichtspunkten)
+		\item \( a = -1 \) Zentrum (umgeben von auschließlich 2-periodisches Orbits) (\(\to\) minimale positive Periode)
+		
+	\end{itemize}
+	
+	\begin{bemerkung}
+	Jeder der bzgl. der linearen Abbildung \(x\mapsto Ax \) invarianter Unterverktorraum \(U\) ist invariant bzgl. des von \(\psi(x) = Ax \) erzeugten dynamsche Systems.
+	\end{bemerkung}
+
+
+
 
 \end{document}
